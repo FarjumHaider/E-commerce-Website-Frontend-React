@@ -7,7 +7,336 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 1px 20px;
+  margin: 16px 50;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+input[type=date], select {
+  width: 100%;
+  padding: 1px 20px;
+  margin: 16px 50;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+span {
+color: red;
+}
+/* button {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+/* input[type=submit]:hover {
+  background-color: #45a049;
+} */
+
+
+
+#tableDesign {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#tableDesign  td, #tableDesign  th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableDesign  tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableDesign  tr:hover {background-color: #ddd;}
+
+#tableDesign  th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Dashboard card */
+.numbar{
+  margin: 150px;
+  font-size: 35px;
+}
+
+.card_1{
+  box-shadow: 8px 8px #f5f5ef;
+  padding: 50px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #2FDD9B;
+  color: #F7F9F9;
+  width: 200px;
+  font-size: 25px;
+  margin: 5px;
+}
+.card_1:hover{
+  background-color: #20c586;
+}
+.card_2{
+  box-shadow: 8px 8px #f5f5ef;
+  padding: 50px;
+  text-align: center;
+  border-radius: 4px;
+  background-color:#2FC8DD;
+    color: #F7F9F9;
+  width: 200px;
+  font-size: 25px;
+  margin: 5px;
+
+}
+
+.card_2:hover{
+  background-color: #20b2c5;
+}
+.card_3{
+  box-shadow: 8px 8px #f5f5ef;
+  padding: 50px;
+  text-align: center;
+  border-radius: 4px;
+  background-color:#FFC300;
+    color: #F7F9F9;;
+  width: 200px;
+  font-size: 25px;
+  margin: 5px;
+}
+.card_3:hover{
+  background-color: #e6b000;
+}
+.card_4{
+  box-shadow: 8px 8px #f5f5ef;
+  padding: 50px;
+  text-align: center;
+  border-radius:  4px;
+  background-color: #ff471a;
+  color: #F7F9F9;
+  width: 200px;
+  font-size: 25px;
+  margin: 5px;
+}
+/* #8533ff */
+.card_4:hover{
+  background-color: #ff3300;
+}
+.card_5{
+  box-shadow: 8px 8px #f5f5ef;
+  padding: 50px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #751aff;
+  color: #F7F9F9;
+  width: 200px;
+  font-size: 25px;
+  margin: 5px;
+}
+.card_5:hover{
+  background-color: #6600ff;
+}
+
+.card_6{
+  box-shadow: 8px 8px #f5f5ef;
+  padding: 50px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #0066ff;
+  color: #F7F9F9;
+  width: 200px;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.card_6:hover{
+  background-color: #005ce6;
+}
+
+/* Header button */
+.button {
+
+  background-color:#0583F2;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  margin: 3px;
+}
+
+/* Login start */
+.loginForm input[type=text], input[type=password]{
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.containerloginForm {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.loginBtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width:100%;
+}
+
+.loginBtn:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+/* Login end */
+
+/* button */
+
+.buttonDetails{
+
+  background-color: #30a94a;
+
+  color: white;
+
+  padding: 1px 15px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  border-radius: 15px;
+
+  margin: 12px;
+
+}
+
+.buttonDetails:hover{
+
+  background-color: #428bca;
+}
+
+.buttonDelete{
+
+  background-color: #a93030;
+
+  color: white;
+
+  padding: 0px 13px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  border-radius: 10px;
+
+  margin: 10px;
+
+}
+
+.buttonDelete:hover{
+
+  background-color: #428bca;
+}
+
+.payAlready{
+  
+
+    background-color: #6ba930;
+  
+    color: white;
+  
+    padding: 1px 15px;
+  
+    text-align: center;
+  
+    text-decoration: none;
+  
+    display: inline-block;
+  
+    border-radius: 15px;
+  
+    margin: 12px;
+  
+  }
+/* Edit */
+.buttonEdit{
+
+  background-color: #307da9;
+
+  color: white;
+
+  padding: 1px 15px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  border-radius: 15px;
+
+  margin: 12px;
+
+}
+
+.logoutBtn {
+
+  background-color:#f20505f6;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  margin: 3px;
 }
