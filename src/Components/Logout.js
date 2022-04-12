@@ -11,7 +11,7 @@ const Logout = () => {
 
     useEffect(() => {
         // setTokenKey(localStorage.getItem('key'));
-        axios.get(["logout",localStorage.getItem('key')].join('/'))
+        axios.get(["logout",localStorage.getItem('token')].join('/'))
             .then(resp => {
                 if (resp.data.status === 200) {
                     swal("Success", resp.data.message, "success")

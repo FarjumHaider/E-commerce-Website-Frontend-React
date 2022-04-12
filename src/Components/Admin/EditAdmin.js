@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Head from "../Head";
 
 const EditAdmin = () => {
     const history = useHistory();
@@ -81,6 +82,7 @@ const EditAdmin = () => {
 
     return (
         <>
+            <Head></Head>
             <div className="container">
             <h1>Edit Employess</h1>
                 <form>

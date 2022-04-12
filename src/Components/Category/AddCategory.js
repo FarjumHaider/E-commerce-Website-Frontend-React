@@ -3,12 +3,26 @@ import ReactDOM from 'react-dom';
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import swal from 'sweetalert';
+import Head from "../Head";
+import EmployeeHead from "../EmployeeHead";
 
 const AddCategory = () => {
 
     const history = useHistory();
     const [name, setName] = useState("");
     const [error, setError] = useState([]);
+
+    let userDashboard;
+    if (localStorage.getItem('role') === 'Admin') {
+        userDashboard = (
+            <Head></Head>
+        )
+    }
+    else if (localStorage.getItem('role') === 'Employee') {
+        userDashboard = (
+            <EmployeeHead></EmployeeHead>
+        )
+    }
 
     const submitCategory = (event) => {
         event.preventDefault();
@@ -39,6 +53,8 @@ const AddCategory = () => {
 
     return (
         <>
+
+        {userDashboard}
         <div className="container">
         <h1>Add Category</h1>
         <form>

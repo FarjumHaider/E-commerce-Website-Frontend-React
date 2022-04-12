@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Head from "./Head";
 
 const Home = () =>{
 
@@ -22,6 +23,7 @@ const Home = () =>{
 
     return(
         <div>
+          <Head></Head>
 <br></br>
       <div class="numbar">
         <table align="center" >

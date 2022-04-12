@@ -2,11 +2,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Head from "../Head";
+import EmployeeHead from "../EmployeeHead";
 
 const CategoryDetail = () => {
     const { name } = useParams();
     const { id } = useParams();
     const [details, setDetails] = useState([]);
+
+    
+
+    let userDashboard;
+    if (localStorage.getItem('role') === 'Admin') {
+        userDashboard = (
+            <Head></Head>
+        )
+    }
+    else if (localStorage.getItem('role') === 'Employee') {
+        userDashboard = (
+            <EmployeeHead></EmployeeHead>
+        )
+    }
+
+
 
     useEffect(() => {
         axios.get(`category/details/${id}/${name}`)
@@ -20,6 +38,10 @@ const CategoryDetail = () => {
     }, []);
 
     return ( 
+
+        <>
+        {userDashboard}
+        
         <div className="container">
             <div className="card">
                 <h1>Category details</h1>
@@ -34,6 +56,9 @@ const CategoryDetail = () => {
                 <h3>Address:{details.address}</h3>
             </div>
         </div>
+        </>
+
+
 
     )
 

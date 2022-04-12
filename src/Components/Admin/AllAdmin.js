@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Head from "../Head";
 
 const AllAdmin = () => {
 
@@ -38,6 +39,8 @@ const AllAdmin = () => {
     
 
     return (
+        <>
+        <Head></Head>
         <div className="container">
             <h1>Employess list</h1>
 
@@ -77,6 +80,8 @@ const AllAdmin = () => {
                 }
             </table>
         </div>
+        </>
+      
     )
 
 

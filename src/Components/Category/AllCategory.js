@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Head from "../Head";
+import EmployeeHead from "../EmployeeHead"
 
 const AllCategory = () => {
 
     const [categories, setCategories] = useState([]);
+
+    let userDashboard;
+    if (localStorage.getItem('role') === 'Admin') {
+        userDashboard = (
+            <Head></Head>
+        )
+    }
+    else if (localStorage.getItem('role') === 'Employee') {
+        userDashboard = (
+            <EmployeeHead></EmployeeHead>
+        )
+    }
+
 
     useEffect(() => {
         AllCategoryList();
@@ -36,6 +51,8 @@ const AllCategory = () => {
 
 
     return (
+        <>
+        {userDashboard}
         <div className="container">
              <h1>Category list</h1>
 
@@ -57,6 +74,8 @@ const AllCategory = () => {
                 }
             </table>
         </div>
+        </>
+
     )
 
 

@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Head from "../Head";
+import EmployeeHead from "../EmployeeHead";
 
 const EditProduct = () => {
     const history = useHistory();
@@ -23,6 +25,19 @@ const EditProduct = () => {
     const [stockDate, setStockDate] = useState("");
     const [image, setImage] = useState("");
     const [pic, setPic] = useState("");
+
+    
+    let userDashboard;
+    if (localStorage.getItem('role') === 'Admin') {
+        userDashboard = (
+            <Head></Head>
+        )
+    }
+    else if (localStorage.getItem('role') === 'Employee') {
+        userDashboard = (
+            <EmployeeHead></EmployeeHead>
+        )
+    }
 
     useEffect(() => {
         axios.get(`edit/product/${id}`)
@@ -80,6 +95,7 @@ const EditProduct = () => {
 
     return (
         <>
+            {userDashboard}
             <div className="container">
                 <form>
 

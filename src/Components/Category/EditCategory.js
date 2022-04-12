@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Head from "../Head";
+import EmployeeHead from "../EmployeeHead";
 
 const EditCategory = () => {
     const history = useHistory();
@@ -11,6 +13,20 @@ const EditCategory = () => {
     const [cname, setCname] = useState("");
 
     const [category, setCategory] = useState([]);
+
+
+    let userDashboard;
+    if (localStorage.getItem('role') === 'Admin') {
+        userDashboard = (
+            <Head></Head>
+        )
+    }
+    else if (localStorage.getItem('role') === 'Employee') {
+        userDashboard = (
+            <EmployeeHead></EmployeeHead>
+        )
+    }
+
 
     useEffect(() => {
         axios.get(`edit/category/${id}/${name}`)
@@ -46,6 +62,8 @@ const EditCategory = () => {
 
     return (
         <>
+        {userDashboard}
+
         <div className="container">
         <h1>Update Category</h1>
         <form>

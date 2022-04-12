@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import swal from 'sweetalert';
+import Head from "../Head";
 
 const AddAdmin = () => {
 
@@ -75,7 +76,8 @@ const AddAdmin = () => {
     }
 
     return (
-        <>
+        <>  
+            <Head></Head>
             <div className="container">
                 <form>
                     <h1>Add Employess</h1>

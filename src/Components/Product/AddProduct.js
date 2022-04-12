@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import swal from 'sweetalert';
+import Head from "../Head";
+import EmployeeHead from "../EmployeeHead";
+
 
 const AddProduct = () => {
 
@@ -18,6 +21,20 @@ const AddProduct = () => {
     const [description, setDescription] = useState("");
     const [stockDate, setStockDate] = useState("");
     const [image, setImage] = useState("");
+
+
+    let userDashboard;
+    if (localStorage.getItem('role') === 'Admin') {
+        userDashboard = (
+            <Head></Head>
+        )
+    }
+    else if (localStorage.getItem('role') === 'Employee') {
+        userDashboard = (
+            <EmployeeHead></EmployeeHead>
+        )
+    }
+
 
     useEffect(() => {
         axios.get("category/list")
@@ -72,6 +89,7 @@ const AddProduct = () => {
 
     return (
         <>
+            {userDashboard}
             <div className="container">
                 <form>
                 <h1>Add Product</h1>

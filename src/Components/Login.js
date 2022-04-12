@@ -37,18 +37,22 @@ const Login = () => {
                 }
                 else if (resp.data.status === 500) {
                     setNouser(resp.data);
-                    console.log(nouser);
+                    //console.log(nouser);
                     setError([]);
 
                 } 
-                else{
-                    var tokenGet = resp.data;
-                    var user = {userId : tokenGet.userid, access_token:tokenGet.token};
-                    localStorage.setItem('user',JSON.stringify(user));
-                    localStorage.setItem('key',tokenGet.token);
-                    console.log(localStorage.getItem('user'));
-                    console.log(localStorage.getItem('key'));
-                    history.push('/home');
+                else if (resp.data.status === 200){
+                    //var tokenGet = resp.data;
+                    //var user = {userId : tokenGet.userid, access_token:tokenGet.token};
+                    //localStorage.setItem('user',JSON.stringify(user));
+                    //localStorage.setItem('key',tokenGet.token);
+                    localStorage.setItem('token', resp.data.token);
+                    localStorage.setItem('role', resp.data.role);
+                    localStorage.setItem('fname', resp.data.fname);
+                    localStorage.setItem('lname', resp.data.lname);
+                    console.log(localStorage.getItem('token'));
+                    console.log(localStorage.getItem('lname'));
+                    history.push('/dashboard');
                     setError([]);
                 }
             }).catch(err => {

@@ -25,14 +25,17 @@ import PayedList from './Components/EmployessSalary/PayedList';
 import PayingSalary from './Components/EmployessSalary/PayingSalary';
 import PayingDue from './Components/EmployessSalary/PayingDue';
 import Logout from './Components/Logout';
+import Dashboard from './Components/Dashboard';
+import CustomerList from './Components/Customer/CustomerList';
+import OrderList from './Components/Order/OrderList';
 
 
 axios.defaults.baseURL = "http://127.0.0.1:8000/api/";
 
 var token = null;
-if(localStorage.getItem('user')){
+if(localStorage.getItem('role')){
   var obj = JSON.parse(localStorage.getItem('user'));
-  token = obj.access_token;
+  token = localStorage.getItem('token');
 }
 axios.defaults.baseURL="http://127.0.0.1:8000/api/";
 axios.defaults.headers.common["Authorization"] = token;
@@ -43,78 +46,87 @@ ReactDOM.render(
     <Router>
 
       <Switch>
+        <Route path="/dashboard">
+          <Dashboard></Dashboard>
+        </Route>
         <Route exact path="/">
         
           <Login></Login>
         </Route>
         <Route exact path="/home">
-          <Head />
+          
           <Home />
         </Route>
         <Route exact path="/admin/list">
-          <Head />
+          
           <AllAdmin></AllAdmin>
         </Route>
         <Route exact path="/add/admin">
-          <Head />
+          
           <AddAdmin></AddAdmin>
         </Route>
         <Route exact path="/admin/details/:id/:name">
-          <Head />
+          
           <AdminDetail></AdminDetail>
         </Route>
         <Route exact path="/edit/admin/:id">
-          <Head />
+          
           <EditAdmin />
         </Route>
         <Route exact path="/category/list">
-          <Head />
+          
           <AllCategory />
         </Route>
         <Route exact path="/add/category">
-          <Head />
+          
           <AddCategory />
         </Route>
         <Route exact path="/edit/category/:id/:name">
-          <Head />
+          
           <EditCategory />
         </Route>
         <Route exact path="/product/list">
-          <Head />
+          
           <AllProduct />
         </Route>
         <Route exact path="/add/product">
-          <Head />
+          
           <AddProduct />
         </Route>
         <Route exact path="/edit/product/:id">
-          <Head />
+          
           <EditProduct />
         </Route>
         <Route exact path="/product/details/:id/:name">
-          <Head />
+          
           <ProductDetail />
         </Route>
         <Route exact path="/employee/payment">
-          <Head />
+          
           <PayingList/>
         </Route>
         <Route exact path="/salaty/paid/list">
-          <Head />
+          
           <PayedList/>
         </Route>
         <Route exact path="/paying/salary/:id/">
-          <Head />
+          
           <PayingSalary/>
         </Route>
         <Route exact path="/paying/due/:id/">
-          <Head />
+          
           <PayingDue/>
         </Route>
         <Route exact path="/logout">
-          <Head />
+          
           <Logout></Logout>
         </Route>
+        <Route exact path="/customer/list">
+          <CustomerList></CustomerList>
+        </Route>
+        <Router exact path="/order/list">
+          <OrderList></OrderList>
+        </Router>
       </Switch>
     </Router>
   </React.StrictMode>,
